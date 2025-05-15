@@ -1,0 +1,219 @@
+/* User Signup Container */
+.user-signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7ff 0%, #e8ebff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-signup-form-container {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.user-signup-form-container:hover {
+    box-shadow: 0 6px 25px rgba(67, 97, 238, 0.15);
+}
+
+.user-signup-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4361ee;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Form Elements */
+.user-signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-signup-input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.user-signup-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #2b2d42;
+}
+
+.user-signup-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    font-family: inherit;
+}
+
+.user-signup-input:focus {
+    outline: none;
+    border-color: #4895ef;
+    box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.2);
+}
+
+.user-signup-input::placeholder {
+    color: #adb5bd;
+}
+
+/* Show Password Toggle */
+.user-signup-show-password {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.user-signup-show-password-checkbox {
+    margin-right: 0.5rem;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.user-signup-show-password-label {
+    font-size: 0.9rem;
+    color: #495057;
+    cursor: pointer;
+}
+
+/* Button Styles */
+.user-signup-button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    font-family: inherit;
+}
+
+.user-signup-button:hover {
+    background-color: #3f37c9;
+    transform: translateY(-2px);
+}
+
+.user-signup-button:active {
+    transform: translateY(0);
+}
+
+/* Link Styles */
+.user-signup-login-text {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #495057;
+}
+
+.user-signup-login-link {
+    color: #4361ee;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.user-signup-login-link a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+}
+
+.user-signup-login-link a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4361ee;
+    transition: all 0.3s ease;
+}
+
+.user-signup-login-link a:hover::after {
+    width: 100%;
+}
+
+/* Error States */
+.user-signup-input-error {
+    border-color: #ef233c;
+}
+
+/* Loading State */
+.user-signup-button-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.user-signup-button-loading::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .user-signup-form-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .user-signup-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-signup-container {
+        padding: 1rem;
+    }
+    
+    .user-signup-form-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .user-signup-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .user-signup-input {
+        padding: 0.7rem 0.9rem;
+    }
+    
+    .user-signup-button {
+        padding: 0.7rem;
+    }
+}
+
+/* Toast Notification */
+.user-signup-toast {
+    font-size: 0.9rem;
+}

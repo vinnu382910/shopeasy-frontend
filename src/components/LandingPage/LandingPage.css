@@ -1,0 +1,191 @@
+/* LandingPage.css */
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://res.cloudinary.com/dgc9ugux7/image/upload/v1747262117/shopping-bag-cart_qh17dc.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%);
+  z-index: 0;
+}
+
+.landing-content {
+  text-align: center;
+  z-index: 1;
+  color: white;
+  padding: 3rem;
+  max-width: 800px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-out;
+}
+
+.landing-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #bf00ff, #d900ff, #dd00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.landing-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  margin-bottom: 3rem;
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.landing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.landing-btn {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 100%;
+  max-width: 320px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.landing-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 100%);
+  z-index: -1;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.landing-btn:hover::before {
+  opacity: 1;
+}
+
+.user-btn {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  color: white;
+}
+
+.user-btn:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(46, 125, 50, 0.3);
+}
+
+.merchant-btn {
+  background: linear-gradient(135deg, #2196F3 0%, #0d47a1 100%);
+  color: white;
+}
+
+.merchant-btn:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(13, 71, 161, 0.3);
+}
+
+/* Pulse animation for buttons */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.landing-btn:active {
+  animation: pulse 0.3s ease;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .landing-content {
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+  }
+  
+  .landing-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                      url('https://res.cloudinary.com/dgc9ugux7/image/upload/v1747262497/2148288218_oeqnqe.jpg');
+    padding: 1rem;
+  }
+  
+  .landing-content {
+    padding: 1.5rem 1rem;
+    backdrop-filter: blur(5px);
+  }
+  
+  .landing-title {
+    font-size: 2rem;
+  }
+  
+  .landing-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .landing-btn {
+    max-width: 280px;
+    padding: 0.9rem 1.8rem;
+  }
+}
+
+/* Loading animation for better perceived performance */
+@media (prefers-reduced-motion: no-preference) {
+  .landing-content {
+    will-change: transform, opacity;
+  }
+}
