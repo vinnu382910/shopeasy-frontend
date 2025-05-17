@@ -10,7 +10,7 @@ const MerchantHeader = ({ merchantName }) => {
     const confirmLogout = window.confirm('Are you sure you want to logout?');
     if (confirmLogout) {
       localStorage.removeItem('merchantToken');
-      navigate('/merchant/login');
+      navigate('/');
     }
   };
 
